@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+<div class="panel-heading"  style="text-align:center">
+	<h2>User Details</h2>
+</div>
+<div class="panel-body">
+<dl class="dl-horizontal">
+	<h4>
+	<dt><strong>Full Name</strong></dt>
+	<dd><%= @user.full_name %></dd>
+	<dt><strong>Email</strong></dt>
+	<dd><%= @user.email %></dd>
+</h4>
+</dl>
+</div>
+</div>
+
+
+<% if @user.stocks.size > 0 %>
+	<%= render 'stocks/list' %>
+<% else %>
+	<p class="lead">This user is not tracking stocks</p>
+<% end %>
+<div class="panel panel-footer">
+	<%= link_to "Back", my_friends_path, class: "btn btn-primary" %>
+</div>
